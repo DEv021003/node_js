@@ -8,9 +8,14 @@ const hostname = process.env.HOST_NAME;
 // console.log(">>> check:" , process.env);
 
 // app.set('views', './src/views/');
+//config template engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//config static files: images/css/js
+app.use(express.static (path.join(__dirname, 'public')));
+
+//khai bao route
 app.get('/', (req, res) => {
 	res.send('hello	')
 });
