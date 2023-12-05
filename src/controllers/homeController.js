@@ -1,9 +1,7 @@
 const connection = require('../config/database');
 
 const getHomepage = (req, res) => {
-    //process data
-    //call model
-    res.send('hello')
+    return res.render('home.ejs')
 }
 
 const getAbout = (req, res) => {
