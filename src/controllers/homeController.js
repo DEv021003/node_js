@@ -1,18 +1,13 @@
 const connection = require('../config/database');
-const { post } = require('../routes/web');
 const { getAllUsers } = require('../services/CRUDService');
 
 const getHomepage = async (req, res) => {
-    let results = await getAllUsers()
-    return res.render('home.ejs',{ListUsers: results})
+    let results = await getAllUsers();
+    return res.render('home.ejs',{listUsers: results})
 }
 
 const getCreatePage = (req, res) => {
     res.render('create.ejs')
-}
-
-const getAnh = (req, res) => {
-    res.render('sample.ejs')
 }
 
 const postCreateUser = async (req, res) => {
@@ -22,6 +17,12 @@ const postCreateUser = async (req, res) => {
 
     res.send('Create users succeed !')
 }
+
+const getAnh = (req, res) => {
+    res.render('sample.ejs')
+}
+
+
 module.exports = {
-    getHomepage, getAnh, getCreatePage,postCreateUser, getAllUsers
+    getHomepage, getAnh, getCreatePage,postCreateUser,
 }

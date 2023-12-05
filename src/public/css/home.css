@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     margin: 0;
 }
 
@@ -16,6 +16,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .topnav a:hover {
@@ -34,13 +35,13 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center-align the "List Users" heading */
 }
 
-.table-container div {
-    font-size: 20px;
+.title {
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    color: #333;
 }
 
 table {
@@ -51,16 +52,31 @@ table {
 
 th, td {
     border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center; /* Center-align table cell content */
+    padding: 15px;
+    text-align: left;
 }
 
 th {
     background-color: #4caf50;
     color: white;
+    text-transform: uppercase;
 }
 
-/* Optional: Add some hover effect for better interactivity */
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
 }
