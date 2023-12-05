@@ -5,30 +5,32 @@ const getHomepage = (req, res) => {
     return res.render('home.ejs')
 }
 
-const getCreate = (req, res) => {
-    res.render('sample.ejs')
+const getCreatePage = (req, res) => {
+    res.render('create.ejs')
 }
 
 const getAnh = (req, res) => {
     res.render('sample.ejs')
 }
 
-const postCreateUser = (req, res) => {
+const postCreateUser = async (req, res) => {
     console.log(">>> req.body: ", req.body)
-    let {email, name, city} = req.body
+    // let {email, name, city} = req.body
     console.log(">>> email = " , email , 'name = ' , name, 'city = ' , city)
 
- 
+    // connection.query(`INSERT INTO Users (email, name, city)VALUES (?, ? , ?)`,[email, name, city],
+    // function(err, results){
+    //     res.send('Create users succeed !')
+    // });
 
-    connection.query(`INSERT INTO Users (email, name, city)
-    VALUES (?, ? , ?)`,
-    [email, name, city],
-    function(err, results) {
-        console.log(results);
-        res.send(' created user succeed')
-    }
-    );
+  
+    let[results,fields] = await   connection.query(`INSERT INTO Users (email, name, city)VALUES (?, ? , ?)`,[email, name, city]);
+
+
+    // const [results, fields] = await connection.query('SELECT * FROM Users u ');
+    // console.log(">>> check" , results)
+    res.send('Create users succeed !')
 }
 module.exports = {
-    getHomepage, getAnh, getCreate,postCreateUser
+    getHomepage, getAnh, getCreatePage,postCreateUser
 }
