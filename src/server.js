@@ -16,12 +16,12 @@ configViewEngine(app);
 app.use('/', webRoutes);
 
 //simple query
-connection.query(
-    'SELECT * FROM Persons u ;',
-    function(err, results,){
-        console.log(results)
-    }
-);
+// connection.query(
+//     'SELECT * FROM Persons u ;',
+//     function(err, results,){
+//         console.log(results)
+//     }
+// );
 
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
