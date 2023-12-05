@@ -1,0 +1,9 @@
+.tu {
+    display: block; /* Chuyển ảnh thành phần tử block để có thể sử dụng margin tự động */
+    margin: 0 auto; /* Đặt margin tự động ở cả hai bên để căn giữa ảnh */
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  
