@@ -21,7 +21,7 @@ app.use('/', webRoutes);
 
 //simple query
 // connection.query(
-//     'SELECT * FROM Persons u ;',
+//     'SELECT * FROM Users u ;',
 //     function(err, results,){
 //         console.log(results)
 //     }
